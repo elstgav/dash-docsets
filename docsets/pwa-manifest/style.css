@@ -1,0 +1,9 @@
+body *:not(:is(article.main-page-content,.breadcrumbs-container)):not(:is(article.main-page-content,.breadcrumbs-container) *):not(:has(:is(article.main-page-content,.breadcrumbs-container))) {
+  display: none !important;
+}
+
+.main-wrapper {
+  grid-template-areas: 'main' !important;
+  grid-template-columns: minmax(0, 80ch) !important;
+  padding-left: 2rem !important;
+}

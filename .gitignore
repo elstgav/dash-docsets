@@ -1,0 +1,6 @@
+.DS_Store
+*.code-workspace
+
+# Icon overrides - exclude to avoid copyright issues
+icons/
+**/Icon.tiff

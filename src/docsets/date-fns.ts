@@ -5,6 +5,13 @@
 // @Download: https://date-fns.org/v*/docs/*
 // @Ignore:   */docs/Change-Log, */docs/Contributing, */docs/Security, */docs/CDN, */docs/webpack, */docs/License
 
+// ----------------------------- WORK IN PROGRESS ------------------------------
+// NOTE: This docset is a work in progress and currently does not work.
+//
+// date-fns has proven to be quite stubborn to parse; likely due to the use of a
+// custom JS library to render the docs.
+// -----------------------------------------------------------------------------
+
 import { DocsetProcessor } from '@/DocsetProcessor'
 
 const mainContent = '[class^="styles_docContainer"] > [class^="styles_wrapper"]'

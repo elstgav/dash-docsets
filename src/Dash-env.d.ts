@@ -1,12 +1,12 @@
 import type { JQueryStatic } from 'jquery'
 
 declare global {
-  const $: JQueryStatic;
+  const $: JQueryStatic
 
   namespace dashDoc {
     interface AddEntryOptions {
-      name: string;
-      hash?: string;
+      name: string
+      hash?: string
 
       /** https://kapeli.com/docsets#supportedentrytypes */
       type:
@@ -84,28 +84,34 @@ declare global {
         | 'Union'
         | 'Value'
         | 'Variable'
-        | 'Word';
+        | 'Word'
     }
 
-    function addEntry(options: AddEntryOptions): void;
-
-    interface CONFIG {
-      entryTypes: {
-        type: AddEntryOptions['type'] | (($el: JQuery<HTMLElement>) => AddEntryOptions['type']);
-        entries: JQuery<HTMLElement> | (() => JQuery<HTMLElement>);
-        name?: string | (($el: JQuery<HTMLElement>) => string);
-        hash?: string | (($el: JQuery<HTMLElement>) => string | undefined);
-      }[];
-
-      /** The main content that should remain visible. */
-      visible: string;
-
-      /** Navigation elements needed for scraping links. */
-      navigation: string;
-
-      /** Elements that should be removed. */
-      remove: JQuery<HTMLElement>[];
-    }
+    function addEntry(options: AddEntryOptions): void
   }
 
+  namespace DocsetProcessing {
+    interface Config {
+      /** The main content that should remain visible. */
+      visible: string
+
+      /** Navigation elements needed for scraping links. */
+      navigation: string
+
+      pageType: Omit<EntryTypeConfig, 'hash'>
+      entryTypes: EntryTypeConfig[]
+
+      /** Elements that should be removed. */
+      remove?: JQuery<HTMLElement>[]
+    }
+
+    interface EntryTypeConfig {
+      type:
+        | dashDoc.AddEntryOptions['type']
+        | (($el: JQuery<HTMLElement>) => dashDoc.AddEntryOptions['type'])
+      entries: JQuery<HTMLElement> | (() => JQuery<HTMLElement>)
+      name?: string | (($el: JQuery<HTMLElement>) => string)
+      hash?: string | (($el: JQuery<HTMLElement>) => string | undefined)
+    }
+  }
 }

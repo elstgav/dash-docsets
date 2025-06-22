@@ -1,0 +1,36 @@
+{
+  "name": "dash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf build && mkdir -p build && for file in src/docsets/*.{js,ts}; do [ -f \"$file\" ] && VITE_ENTRY=\"$file\" vite build; done",
+    "build:multi": "vite build",
+    "watch": "vite build --watch",
+    "check": "pnpm check:code && pnpm check:format && pnpm check:types",
+    "fix": "pnpm fix:format && pnpm fix:code",
+    "check:code": "eslint src --ext .js,.ts",
+    "fix:code": "eslint src --ext .js,.ts --fix",
+    "check:format": "prettier --check src/**/*.{js,ts}",
+    "fix:format": "prettier --write src/**/*.{js,ts}",
+    "check:types": "tsc --noEmit",
+    "copy-icons": "./bin/copy-icons.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "devDependencies": {
+    "@types/jquery": "^3.5.32",
+    "@types/node": "^24.0.3",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.0",
+    "glob": "^11.0.3",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.1",
+    "vite": "^6.3.5"
+  }
+}

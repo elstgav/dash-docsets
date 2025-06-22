@@ -1,0 +1,8 @@
+# Prettier auto-formats code
+# See https://prettier.io/docs/en/options.html for configuration
+
+printWidth: 100
+semi: false
+singleQuote: true
+tabWidth: 2
+trailingComma: all

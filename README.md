@@ -11,12 +11,14 @@ Custom Dash docset scripts for various JavaScript libraries and tools.
 1. Open `Dash Settings` > `Downloads` > `Docset Generator` > `Create a new docset`
 2. Select `Download website` as the source
 3. Website download settings:  
-   *(copied from the docset’s `docset-name.js` file comment)*
+   _(copied from the docset’s `docset-name.js` file comment)_
+
    | Field                   | Value       |
-   |:------------------------|:------------|
+   | :---------------------- | :---------- |
    | Website URL             | `@URL`      |
    | Download pages matching | `@Download` |
    | Ignore pages matching   | `@Ignore`   |
+
 4. Enter Docset name and keyword
 5. Choose `Custom index` and paste from `docset-name.js`
 6. Paste custom CSS (if applicable) from `docset-name.css`
